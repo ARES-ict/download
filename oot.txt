@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline On Track</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        /* Gadget mockup */
+        .phone {
+            width: 260px;
+            height: 520px;
+            margin: 0 auto 40px;
+            border-radius: 35px;
+            background: #111;
+            padding: 15px;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .phone:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            background: linear-gradient(180deg, #1a1a1a, #0f3d3d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #00fff0;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #00cfc2;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>OFFLINE ON TRACK</h1>
+        <p>Stay focused. Reduce screen time. Take control offline.</p>
+
+        <div class="phone">
+            <div class="screen">
+                Interactive Gadget Preview<br><br>
+                📵 Offline Mode<br>
+                ⏱ Screen Tracking<br>
+                📊 Focus Insights
+            </div>
+        </div>
+
+        <!-- APK DOWNLOAD -->
+        <a class="download-btn" href="Offline-on-Track.apk" download>
+            Download APK
+        </a>
+
+        <footer>
+            <p>© 2026 Offline On Track</p>
+        </footer>
+    </div>
+
+</body>
+</html>
