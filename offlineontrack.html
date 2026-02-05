@@ -1,197 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Offline On Track</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline On Track</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
 
-body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #ffffff;
-    min-height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
 
-/* Floating gadgets */
-.floating-gadgets {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
+        /* Floating gadgets background */
+        .floating-gadgets {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-.gadget {
-    position: absolute;
-    font-size: clamp(2.8rem, 5.5vh, 3.8rem);
-    opacity: 0.15;
-    animation: floatUp linear infinite;
-}
+        .gadget {
+            position: absolute;
+            font-size: clamp(2rem, 4vh, 3rem);
+            opacity: 0.15;
+            animation: floatUp linear infinite;
+        }
 
-.gadget:nth-child(1){left:8%;animation-duration:18s}
-.gadget:nth-child(2){left:22%;animation-duration:24s}
-.gadget:nth-child(3){left:40%;animation-duration:20s}
-.gadget:nth-child(4){left:58%;animation-duration:26s}
-.gadget:nth-child(5){left:75%;animation-duration:22s}
-.gadget:nth-child(6){left:90%;animation-duration:30s}
+        .gadget:nth-child(1) { left: 8%;  animation-duration: 18s; }
+        .gadget:nth-child(2) { left: 22%; animation-duration: 24s; }
+        .gadget:nth-child(3) { left: 40%; animation-duration: 20s; }
+        .gadget:nth-child(4) { left: 58%; animation-duration: 26s; }
+        .gadget:nth-child(5) { left: 75%; animation-duration: 22s; }
+        .gadget:nth-child(6) { left: 90%; animation-duration: 30s; }
 
-@keyframes floatUp {
-    from { transform: translateY(110vh) rotate(0deg); }
-    to   { transform: translateY(-20vh) rotate(360deg); }
-}
+        @keyframes floatUp {
+            from {
+                transform: translateY(110vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-20vh) rotate(360deg);
+            }
+        }
 
-/* ===== MAIN CONTAINER ===== */
-.container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 420px;
-    height: 100svh;
-    padding: clamp(28px, 4.5vh, 52px) 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: clamp(20px, 4vh, 40px) 20px;
+            max-width: 900px;
+            width: 100%;
+        }
 
-/* ===== TEXT ===== */
-h1 {
-    font-size: clamp(3rem, 7.5vh, 4.8rem);
-    letter-spacing: clamp(2px, 0.8vw, 4px);
-}
+        h1 {
+            font-size: clamp(2.2rem, 6vh, 4rem);
+            letter-spacing: clamp(1px, 0.6vw, 3px);
+            margin-bottom: 1.5vh;
+        }
 
-.subtitle {
-    font-size: clamp(1.2rem, 2.8vh, 1.4rem);
-    opacity: 0.9;
-}
+        p {
+            font-size: clamp(0.95rem, 2.2vh, 1.2rem);
+            opacity: 0.9;
+            margin-bottom: 4vh;
+        }
 
-/* ===== PHONE MOCKUP ===== */
-.phone {
-    width: clamp(260px, 38vh, 320px);
-    height: clamp(480px, 66vh, 640px);
-    background: #111;
-    border-radius: 40px;
-    padding: 18px;
-    margin: 2vh auto;
-    box-shadow: 0 0 55px rgba(0,255,255,0.45);
-    flex-shrink: 0;
-}
+        /* Phone mockup */
+        .phone {
+            width: clamp(200px, 28vh, 260px);
+            height: clamp(380px, 60vh, 520px);
+            margin: 0 auto 4vh;
+            border-radius: 35px;
+            background: #111;
+            padding: 15px;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-.screen {
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    background: linear-gradient(180deg, #1a1a1a, #0f3d3d);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: clamp(20px, 3.8vh, 30px);
-}
+        .phone:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+        }
 
-/* ===== LOGO ===== */
-.logo-holder {
-    width: clamp(90px, 13vh, 120px);
-    height: clamp(90px, 13vh, 120px);
-    border-radius: 50%;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2vh;
-    box-shadow: 0 0 26px rgba(0,255,255,0.6);
-}
+        .screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            background: linear-gradient(180deg, #1a1a1a, #0f3d3d);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: clamp(15px, 3vh, 25px) 15px;
+            text-align: center;
+        }
 
-.logo-holder img {
-    width: 65%;
-    height: 65%;
-    object-fit: contain;
-}
+        .logo-holder {
+            width: clamp(65px, 10vh, 90px);
+            height: clamp(65px, 10vh, 90px);
+            border-radius: 50%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2vh;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
 
-/* ===== FEATURES TEXT ===== */
-.features {
-    font-size: clamp(1.05rem, 2.4vh, 1.2rem);
-    line-height: 1.65;
-}
+        .logo-holder img {
+            width: 65%;
+            height: 65%;
+            object-fit: contain;
+        }
 
-/* ===== BUTTON ===== */
-.download-btn {
-    align-self: center;
-    padding: clamp(16px, 3.2vh, 20px) clamp(40px, 8vw, 52px);
-    background: #00fff0;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 34px;
-    font-size: clamp(1.1rem, 2.6vh, 1.25rem);
-    transition: transform 0.3s ease, background 0.3s ease;
-}
+        .features {
+            font-size: clamp(0.9rem, 2vh, 1.05rem);
+            line-height: 1.6;
+        }
 
-.download-btn:hover {
-    background: #00cfc2;
-    transform: scale(1.05);
-}
+        .download-btn {
+            display: inline-block;
+            padding: clamp(12px, 2.5vh, 15px) clamp(28px, 6vw, 40px);
+            background: #00fff0;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            font-size: clamp(0.95rem, 2.2vh, 1.1rem);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
 
-/* ===== FOOTER ===== */
-footer {
-    font-size: clamp(0.9rem, 2vh, 1rem);
-    opacity: 0.7;
-}
+        .download-btn:hover {
+            background: #00cfc2;
+            transform: scale(1.05);
+        }
 
-/* ===== EXTRA SHORT SCREEN SAFETY ===== */
-@media (max-height: 640px) {
-    .phone {
-        height: 58vh;
-    }
-}
-</style>
+        footer {
+            margin-top: 3vh;
+            font-size: clamp(0.8rem, 1.8vh, 0.9rem);
+            opacity: 0.7;
+        }
+
+        /* Short screen support */
+        @media (max-height: 650px) {
+            body {
+                align-items: flex-start;
+            }
+
+            .container {
+                padding-top: 20px;
+            }
+
+            footer {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="floating-gadgets">
-    <span class="gadget">📱</span>
-    <span class="gadget">💻</span>
-    <span class="gadget">⌚</span>
-    <span class="gadget">📱</span>
-    <span class="gadget">🖥️</span>
-    <span class="gadget">⌚</span>
-</div>
-
-<div class="container">
-    <div>
-        <h1>OFFLINE ON TRACK</h1>
-        <p class="subtitle">Stay focused. Reduce screen time. Take control offline.</p>
+    <!-- Floating Gadgets -->
+    <div class="floating-gadgets">
+        <span class="gadget">📱</span>
+        <span class="gadget">💻</span>
+        <span class="gadget">⌚</span>
+        <span class="gadget">📱</span>
+        <span class="gadget">🖥️</span>
+        <span class="gadget">⌚</span>
     </div>
 
-    <div class="phone">
-        <div class="screen">
-            <div class="logo-holder">
-                <img src="logo.png" alt="Offline On Track Logo">
-            </div>
-            <div class="features">
-                <strong>Offline On Track</strong><br><br>
-                This app is created to raise awareness about the effects of limited screen time on our overall well-being.
-                It is designed for educational and informational purposes only and is not intended for sale or commercial use.
+    <div class="container">
+        <h1>OFFLINE ON TRACK</h1>
+        <p>Stay focused. Reduce screen time. Take control offline.</p>
+
+        <div class="phone">
+            <div class="screen">
+
+                <div class="logo-holder">
+                    <img src="logo.png" alt="Offline On Track Logo">
+                </div>
+
+                <div class="features">
+                    <strong>Offline On Track</strong><br><br>
+                    This app is created to raise awareness about the effects of limited screen time on our overall well-being.
+                    It is designed for educational and informational purposes only and is not intended for sale or commercial use.
+                </div>
+
             </div>
         </div>
+
+        <a class="download-btn" href="Offline-on-Track.apk" download>
+            Download APK
+        </a>
+
+        <footer>
+            <p>© 2026 Offline On Track</p>
+        </footer>
     </div>
-
-    <a class="download-btn" href="Offline-on-Track.apk" download>
-        Download APK
-    </a>
-
-    <footer>© 2026 Offline On Track</footer>
-</div>
 
 </body>
 </html>
+
+
+
