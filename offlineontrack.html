@@ -15,7 +15,7 @@
 
 body {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
+    color: #ffffff;
     min-height: 100svh;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ body {
 
 .gadget {
     position: absolute;
-    font-size: clamp(2.5rem, 5vh, 3.5rem);
+    font-size: clamp(2.8rem, 5.5vh, 3.8rem);
     opacity: 0.15;
     animation: floatUp linear infinite;
 }
@@ -50,38 +50,39 @@ body {
     to   { transform: translateY(-20vh) rotate(360deg); }
 }
 
-/* ===== PORTRAIT LAYOUT ===== */
+/* ===== MAIN CONTAINER ===== */
 .container {
     position: relative;
     z-index: 1;
     width: 100%;
     max-width: 420px;
     height: 100svh;
-    padding: clamp(24px, 4vh, 48px) 20px;
+    padding: clamp(28px, 4.5vh, 52px) 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     text-align: center;
 }
 
+/* ===== TEXT ===== */
 h1 {
-    font-size: clamp(2.6rem, 7vh, 4.2rem);
-    letter-spacing: 3px;
+    font-size: clamp(3rem, 7.5vh, 4.8rem);
+    letter-spacing: clamp(2px, 0.8vw, 4px);
 }
 
 .subtitle {
-    font-size: clamp(1.1rem, 2.6vh, 1.3rem);
+    font-size: clamp(1.2rem, 2.8vh, 1.4rem);
     opacity: 0.9;
 }
 
-/* Phone */
+/* ===== PHONE MOCKUP ===== */
 .phone {
-    width: clamp(240px, 36vh, 300px);
-    height: clamp(440px, 64vh, 600px);
+    width: clamp(260px, 38vh, 320px);
+    height: clamp(480px, 66vh, 640px);
     background: #111;
-    border-radius: 38px;
-    padding: 16px;
+    border-radius: 40px;
+    padding: 18px;
+    margin: 2vh auto;
     box-shadow: 0 0 55px rgba(0,255,255,0.45);
     flex-shrink: 0;
 }
@@ -89,57 +90,67 @@ h1 {
 .screen {
     width: 100%;
     height: 100%;
-    border-radius: 28px;
+    border-radius: 30px;
     background: linear-gradient(180deg, #1a1a1a, #0f3d3d);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: clamp(18px, 3.5vh, 28px);
+    padding: clamp(20px, 3.8vh, 30px);
 }
 
+/* ===== LOGO ===== */
 .logo-holder {
-    width: clamp(80px, 12vh, 110px);
-    height: clamp(80px, 12vh, 110px);
+    width: clamp(90px, 13vh, 120px);
+    height: clamp(90px, 13vh, 120px);
     border-radius: 50%;
     background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2vh;
-    box-shadow: 0 0 24px rgba(0,255,255,0.6);
+    box-shadow: 0 0 26px rgba(0,255,255,0.6);
 }
 
 .logo-holder img {
     width: 65%;
     height: 65%;
+    object-fit: contain;
 }
 
+/* ===== FEATURES TEXT ===== */
 .features {
-    font-size: clamp(1rem, 2.3vh, 1.15rem);
+    font-size: clamp(1.05rem, 2.4vh, 1.2rem);
     line-height: 1.65;
 }
 
-/* Button */
+/* ===== BUTTON ===== */
 .download-btn {
-    padding: clamp(14px, 3vh, 18px) clamp(36px, 7vw, 48px);
+    align-self: center;
+    padding: clamp(16px, 3.2vh, 20px) clamp(40px, 8vw, 52px);
     background: #00fff0;
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 32px;
-    font-size: clamp(1.05rem, 2.4vh, 1.2rem);
+    border-radius: 34px;
+    font-size: clamp(1.1rem, 2.6vh, 1.25rem);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.download-btn:hover {
+    background: #00cfc2;
+    transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
 footer {
-    font-size: clamp(0.85rem, 1.9vh, 0.95rem);
+    font-size: clamp(0.9rem, 2vh, 1rem);
     opacity: 0.7;
 }
 
-/* ===== LANDSCAPE SAFETY ===== */
-@media (orientation: landscape) {
-    .container {
-        transform: scale(0.85);
-        height: auto;
+/* ===== EXTRA SHORT SCREEN SAFETY ===== */
+@media (max-height: 640px) {
+    .phone {
+        height: 58vh;
     }
 }
 </style>
@@ -170,7 +181,7 @@ footer {
             <div class="features">
                 <strong>Offline On Track</strong><br><br>
                 This app is created to raise awareness about the effects of limited screen time on our overall well-being.
-                It is designed for educational and informational purposes only.
+                It is designed for educational and informational purposes only and is not intended for sale or commercial use.
             </div>
         </div>
     </div>
