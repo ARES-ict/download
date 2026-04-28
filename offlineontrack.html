@@ -23,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Floating gadgets background */
         .floating-gadgets {
             position: fixed;
             inset: 0;
@@ -76,7 +75,6 @@
             margin-bottom: 4vh;
         }
 
-        /* Phone mockup */
         .phone {
             width: clamp(200px, 28vh, 260px);
             height: clamp(380px, 60vh, 520px);
@@ -151,7 +149,6 @@
             opacity: 0.7;
         }
 
-        /* Short screen support */
         @media (max-height: 650px) {
             body {
                 align-items: flex-start;
@@ -169,7 +166,6 @@
 </head>
 <body>
 
-    <!-- Floating Gadgets -->
     <div class="floating-gadgets">
         <span class="gadget">📱</span>
         <span class="gadget">💻</span>
@@ -183,24 +179,41 @@
         <h1>OFFLINE ON TRACK</h1>
         <p>Stay focused. Reduce screen time. Take control offline.</p>
 
+        <!-- FIRST APP -->
         <div class="phone">
             <div class="screen">
-
                 <div class="logo-holder">
                     <img src="logo.png" alt="Offline On Track Logo">
                 </div>
-
                 <div class="features">
                     <strong>Offline On Track</strong><br><br>
                     This app is created to raise awareness about the effects of limited screen time on our overall well-being.
                     It is designed for educational and informational purposes only and is not intended for sale or commercial use.
                 </div>
-
             </div>
         </div>
 
         <a class="download-btn" href="https://drive.usercontent.google.com/download?id=1HL3_j84XpcfwaGWlwjR8Q1XhX2xzCRVe&export=download&authuser=0">
             Download APK
+        </a>
+
+        <!-- SECOND APP (ADDED) -->
+        <div class="phone">
+            <div class="screen">
+                <div class="logo-holder">
+                    <img src="logo.png" alt="Offline On Track Logo">
+                </div>
+                <div class="features">
+                    <strong>Offline On Track</strong><br><br>
+                    This version is a screen tracker that monitors your phone usage.
+                    It helps you stay aware of your screen time and alerts you every 5 hours
+                    to encourage breaks and healthier digital habits.
+                </div>
+            </div>
+        </div>
+
+        <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1zhIDmsyeicyQnFVyDpM46LuXCUl0AbYD">
+            Download Tracker App
         </a>
 
         <footer>
@@ -210,6 +223,3 @@
 
 </body>
 </html>
-
-
-
