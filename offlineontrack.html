@@ -58,37 +58,48 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            padding: clamp(20px, 4vh, 40px) 20px;
-            max-width: 900px;
+            padding: 20px;
+            max-width: 1000px;
             width: 100%;
         }
 
         h1 {
-            font-size: clamp(2.2rem, 6vh, 4rem);
-            letter-spacing: clamp(1px, 0.6vw, 3px);
-            margin-bottom: 1.5vh;
+            font-size: clamp(2rem, 5vh, 3.5rem);
+            margin-bottom: 10px;
         }
 
         p {
-            font-size: clamp(0.95rem, 2.2vh, 1.2rem);
-            opacity: 0.9;
-            margin-bottom: 4vh;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* NEW: grid layout for compact design */
+        .apps-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            justify-items: center;
+        }
+
+        .app-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .phone {
-            width: clamp(200px, 28vh, 260px);
-            height: clamp(380px, 60vh, 520px);
-            margin: 0 auto 4vh;
+            width: 240px;
+            height: 460px;
             border-radius: 35px;
             background: #111;
             padding: 15px;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .phone:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 0 60px rgba(0, 255, 255, 0.7);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.7);
         }
 
         .screen {
@@ -99,19 +110,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: clamp(15px, 3vh, 25px) 15px;
+            padding: 20px 15px;
             text-align: center;
         }
 
         .logo-holder {
-            width: clamp(65px, 10vh, 90px);
-            height: clamp(65px, 10vh, 90px);
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2vh;
+            margin-bottom: 15px;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
         }
 
@@ -122,20 +133,20 @@
         }
 
         .features {
-            font-size: clamp(0.9rem, 2vh, 1.05rem);
-            line-height: 1.6;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .download-btn {
-            display: inline-block;
-            padding: clamp(12px, 2.5vh, 15px) clamp(28px, 6vw, 40px);
+            margin-top: 15px;
+            padding: 12px 30px;
             background: #00fff0;
             color: #000;
             text-decoration: none;
             font-weight: bold;
             border-radius: 30px;
-            font-size: clamp(0.95rem, 2.2vh, 1.1rem);
-            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 0.95rem;
+            transition: 0.3s;
         }
 
         .download-btn:hover {
@@ -144,23 +155,9 @@
         }
 
         footer {
-            margin-top: 3vh;
-            font-size: clamp(0.8rem, 1.8vh, 0.9rem);
+            margin-top: 20px;
+            font-size: 0.85rem;
             opacity: 0.7;
-        }
-
-        @media (max-height: 650px) {
-            body {
-                align-items: flex-start;
-            }
-
-            .container {
-                padding-top: 20px;
-            }
-
-            footer {
-                margin-bottom: 20px;
-            }
         }
     </style>
 </head>
@@ -179,42 +176,51 @@
         <h1>OFFLINE ON TRACK</h1>
         <p>Stay focused. Reduce screen time. Take control offline.</p>
 
-        <!-- FIRST APP -->
-        <div class="phone">
-            <div class="screen">
-                <div class="logo-holder">
-                    <img src="logo.png" alt="Offline On Track Logo">
+        <!-- NEW WRAPPER -->
+        <div class="apps-wrapper">
+
+            <!-- FIRST APP -->
+            <div class="app-block">
+                <div class="phone">
+                    <div class="screen">
+                        <div class="logo-holder">
+                            <img src="logo.png" alt="Offline On Track Logo">
+                        </div>
+                        <div class="features">
+                            <strong>Offline On Track</strong><br><br>
+                            This app is created to raise awareness about the effects of limited screen time on our overall well-being.
+                            It is designed for educational and informational purposes only and is not intended for sale or commercial use.
+                        </div>
+                    </div>
                 </div>
-                <div class="features">
-                    <strong>Offline On Track</strong><br><br>
-                    This app is created to raise awareness about the effects of limited screen time on our overall well-being.
-                    It is designed for educational and informational purposes only and is not intended for sale or commercial use.
-                </div>
+
+                <a class="download-btn" href="https://drive.usercontent.google.com/download?id=1HL3_j84XpcfwaGWlwjR8Q1XhX2xzCRVe&export=download&authuser=0">
+                    Download APK
+                </a>
             </div>
-        </div>
 
-        <a class="download-btn" href="https://drive.usercontent.google.com/download?id=1HL3_j84XpcfwaGWlwjR8Q1XhX2xzCRVe&export=download&authuser=0">
-            Download APK
-        </a>
+            <!-- SECOND APP -->
+            <div class="app-block">
+                <div class="phone">
+                    <div class="screen">
+                        <div class="logo-holder">
+                            <img src="logo.png" alt="Offline On Track Logo">
+                        </div>
+                        <div class="features">
+                            <strong>Offline On Track</strong><br><br>
+                            This version is a screen tracker that monitors your phone usage.
+                            It helps you stay aware of your screen time and alerts you every 5 hours
+                            to encourage breaks and healthier digital habits.
+                        </div>
+                    </div>
+                </div>
 
-        <!-- SECOND APP (ADDED) -->
-        <div class="phone">
-            <div class="screen">
-                <div class="logo-holder">
-                    <img src="logo.png" alt="Offline On Track Logo">
-                </div>
-                <div class="features">
-                    <strong>Offline On Track</strong><br><br>
-                    This version is a screen tracker that monitors your phone usage.
-                    It helps you stay aware of your screen time and alerts you every 5 hours
-                    to encourage breaks and healthier digital habits.
-                </div>
+                <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1zhIDmsyeicyQnFVyDpM46LuXCUl0AbYD">
+                    Download Tracker App
+                </a>
             </div>
-        </div>
 
-        <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1zhIDmsyeicyQnFVyDpM46LuXCUl0AbYD">
-            Download Tracker App
-        </a>
+        </div>
 
         <footer>
             <p>© 2026 Offline On Track</p>
